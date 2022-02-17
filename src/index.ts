@@ -25,6 +25,8 @@ const questions: PromptObject[] = [
 
   const params = await prompts(questions);
 
+  // Connect to the Ethereum network since it doesn't matter which network
+  // you're connected to.
   const web3 = new Web3('https://mainnet.infura.io/');
 
   for (let i = 0; i < params.numberOfWallets; i++) {
