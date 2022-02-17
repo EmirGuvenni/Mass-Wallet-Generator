@@ -2,14 +2,16 @@
   "name": "wallet-generator",
   "version": "1.0.0",
   "description": "Creates any number of wallets on a given network.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
   "author": "Emir Guvenni (contact@emirguvenni.com)",
   "license": "MIT",
   "private": false,
   "scripts": {
     "start": "node .",
     "lint": "eslint ./src",
-    "build": "tsc --project ."
+    "build": "tsc --project .",
+    "compile": "yarn build && pkg -C Gzip ."
   },
   "dependencies": {
     "ethers": "^5.5.4",
