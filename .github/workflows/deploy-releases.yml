@@ -31,9 +31,9 @@ jobs:
 
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             wallet-generator-linux
             wallet-generator-macos
             wallet-generator-win.exe
+          tag_name: ${{ github.ref }}
