@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-          default_bump: none
+          DEFAULT_BUMP: none
 
       - name: Release
         uses: softprops/action-gh-release@v1
