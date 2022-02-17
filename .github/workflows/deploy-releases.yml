@@ -1,0 +1,27 @@
+name: Compile and deploy releases
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: v16.13.1
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Install pkg
+        run: yarn global add pkg
+
+      - name: Compile
+        run: yarn compile
