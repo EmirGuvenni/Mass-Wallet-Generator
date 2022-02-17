@@ -1,3 +1,6 @@
 node_modules/
 dist/
 *.txt
+wallet-generator-linux
+wallet-generator-macos
+wallet-generator-win.exe
