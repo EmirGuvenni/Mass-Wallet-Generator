@@ -23,17 +23,17 @@ const questions: PromptObject[] = [
 (async () => {
   console.clear();
 
-  const params = await prompts(questions);
+  const { numberOfWallets, fileName } = await prompts(questions);
 
   // Connect to the Ethereum network since it doesn't matter which network
   // you're connected to.
   const web3 = new Web3('https://mainnet.infura.io/');
 
-  for (let i = 0; i < params.numberOfWallets; i++) {
+  for (let i = 0; i < numberOfWallets; i++) {
     const wallet = web3.eth.accounts.create(web3.utils.randomHex(32));
 
     fs.appendFileSync(
-      `${params.fileName}.txt`,
+      `${fileName}.txt`,
       `${wallet.address}=${wallet.privateKey}\n`
     );
   }
